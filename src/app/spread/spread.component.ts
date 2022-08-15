@@ -39,6 +39,8 @@ export class SpreadComponent {
     },
   ];
 
+  squareColors: Color[] = [];
+
   constructor(private possibilityService: PossibilityService) {}
 
   ngOnInit(): void {}
@@ -47,8 +49,20 @@ export class SpreadComponent {
   // TODO: Maak dat je van getal naar kleur kunt
   // TODO: Schoon de calculatePossibility functie op
 
-  public setPossibility = (colors: Color[]): void => {
+  setPossibility = (colors: Color[]): void => {
     this.squareNumber =
       this.possibilityService.convertColorsToPossibility(colors);
   };
+
+  addSquareColor(color: Color) {
+    if (this.squareColors.length === 4) {
+      this.squareColors = [];
+    }
+
+    this.squareColors.push(color);
+
+    if (this.squareColors.length === 4) {
+      this.setPossibility(this.squareColors);
+    }
+  }
 }

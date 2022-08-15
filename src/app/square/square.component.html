@@ -1,1 +1,5 @@
-<h2>{{ squareNumber }}</h2>
+<div *ngIf="squareColors.length > 0">
+  <ul>
+    <li *ngFor="let color of squareColors">{{ color.name }}</li>
+  </ul>
+</div>

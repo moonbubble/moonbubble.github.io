@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class SquareComponent {
   @Input()
-  squareNumber: number = 0;
+  squareColors: Color[] = [];
 
   ngOnInit(): void {}
 }

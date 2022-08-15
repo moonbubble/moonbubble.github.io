@@ -1,6 +1,11 @@
-<p>Spread component</p>
-<app-color-picker
-  [colors]="colors"
-  [callBackFunction]="setPossibility"
-></app-color-picker>
-<app-square [squareNumber]="squareNumber"></app-square>
+<div
+  class="h-screen xl:mx-96 xl:my-32 px-20 py-12 xl:shadow-lg xl:border-solid xl:border-2 xl:border-indigo-600"
+>
+  <app-color-picker
+    (newSquareColorEvent)="addSquareColor($event)"
+    [colors]="colors"
+    [callBackFunction]="setPossibility"
+  ></app-color-picker>
+  <app-square [squareColors]="squareColors"></app-square>
+  <app-square-number [squareNumber]="squareNumber"></app-square-number>
+</div>
