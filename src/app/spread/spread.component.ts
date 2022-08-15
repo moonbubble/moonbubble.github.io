@@ -12,30 +12,37 @@ export class SpreadComponent {
     {
       name: 'geel',
       index: 0,
+      backgroundColor: 'bg-amber-300',
     },
     {
       name: 'koraal',
       index: 1,
+      backgroundColor: 'bg-red-400',
     },
     {
       name: 'rood',
       index: 2,
+      backgroundColor: 'bg-rose-700',
     },
     {
       name: 'wit',
       index: 3,
+      backgroundColor: 'bg-cyan-300',
     },
     {
       name: 'licht',
       index: 4,
+      backgroundColor: 'bg-lime-200',
     },
     {
       name: 'beige',
       index: 5,
+      backgroundColor: 'bg-stone-400',
     },
     {
       name: 'blauw',
       index: 6,
+      backgroundColor: 'bg-slate-700',
     },
   ];
 

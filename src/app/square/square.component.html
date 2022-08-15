@@ -1,5 +1,7 @@
-<div *ngIf="squareColors.length > 0">
+<div *ngIf="squareColors.length > 0" class="w-full my-4">
   <ul>
-    <li *ngFor="let color of squareColors">{{ color.name }}</li>
+    <li class="text-center" *ngFor="let color of squareColors">
+      {{ color.name }}
+    </li>
   </ul>
 </div>

@@ -7,6 +7,7 @@ import { SpreadComponent } from './spread/spread.component';
 import { SquareComponent } from './square/square.component';
 import { ColorpickerComponent } from './colorpicker/colorpicker.component';
 import { SquareNumberComponent } from './square-number/square-number.component';
+import { ColorChipComponent } from './colorpicker/color-chip/color-chip.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { SquareNumberComponent } from './square-number/square-number.component';
     SpreadComponent,
     SquareComponent,
     ColorpickerComponent,
-    SquareNumberComponent
+    SquareNumberComponent,
+    ColorChipComponent
   ],
   imports: [
     BrowserModule,

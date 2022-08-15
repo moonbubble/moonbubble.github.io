@@ -16,21 +16,8 @@ export class ColorpickerComponent {
 
   @Output() newSquareColorEvent = new EventEmitter<Color>();
 
-  choose(color: Color) {
-    // if (this.colorCollect.length === 4) {
-    //   this.colorCollect = [];
-    // }
-    // console.log(color);
-    // this.colorCollect.push(color);
-    // console.log("this.colorCollect", this.colorCollect);
-    // if (this.colorCollect.length === 4 && this.callBackFunction) {
-    //   this.callBackFunction(this.colorCollect);
-    // }
-
-    this.addNewSquareColor(color);
-  }
-
-  addNewSquareColor(color: Color) {
+  addNewSquareColor = (color: Color): void => {
+    console.log('choosing...', color);
     this.newSquareColorEvent.emit(color);
-  }
+  };
 }
