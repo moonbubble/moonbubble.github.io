@@ -1,0 +1,11 @@
+<div>
+  <button (click)="choose(color)" *ngFor="let color of colors">
+    {{ color.name }}
+  </button>
+</div>
+
+<div *ngIf="colorCollect.length > 0">
+  <ul>
+    <li *ngFor="let color of colorCollect">{{ color.name }}</li>
+  </ul>
+</div>
