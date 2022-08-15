@@ -46,7 +46,9 @@ export class PossibilityService {
         }
       }
     }
-    console.log('sum', sum);
+    if (sum <= 0) {
+      return 0;
+    }
 
     return sum;
   }
