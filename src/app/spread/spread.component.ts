@@ -12,37 +12,44 @@ export class SpreadComponent {
     {
       name: 'geel',
       index: 0,
-      backgroundColor: 'bg-amber-300',
+      backgroundColor: 'bg-amber-400',
+      chosen: false,
     },
     {
       name: 'koraal',
       index: 1,
-      backgroundColor: 'bg-red-400',
+      backgroundColor: 'bg-red-500',
+      chosen: false,
     },
     {
       name: 'rood',
       index: 2,
-      backgroundColor: 'bg-rose-700',
+      backgroundColor: 'bg-red-700',
+      chosen: false,
     },
     {
       name: 'wit',
       index: 3,
-      backgroundColor: 'bg-cyan-300',
+      backgroundColor: 'bg-teal-300',
+      chosen: false,
     },
     {
       name: 'licht',
       index: 4,
-      backgroundColor: 'bg-lime-200',
+      backgroundColor: 'bg-lime-400',
+      chosen: false,
     },
     {
       name: 'beige',
       index: 5,
-      backgroundColor: 'bg-stone-400',
+      backgroundColor: 'bg-stone-300',
+      chosen: false,
     },
     {
       name: 'blauw',
       index: 6,
-      backgroundColor: 'bg-slate-700',
+      backgroundColor: 'bg-slate-600',
+      chosen: false,
     },
   ];
 
@@ -52,7 +59,6 @@ export class SpreadComponent {
 
   ngOnInit(): void {}
 
-  // TODO: Maak dat je kan aanklikken welke kleur je wilt in welke volgorde
   // TODO: Maak dat je van getal naar kleur kunt
   // TODO: Schoon de calculatePossibility functie op
 
@@ -70,6 +76,12 @@ export class SpreadComponent {
 
     if (this.squareColors.length === 4) {
       this.setPossibility(this.squareColors);
+      this.colors = this.colors.map((color) => {
+        return {
+          ...color,
+          chosen: false,
+        };
+      });
     }
   }
 }

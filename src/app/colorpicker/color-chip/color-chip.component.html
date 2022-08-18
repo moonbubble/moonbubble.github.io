@@ -1,6 +1,9 @@
-<button
-  *ngIf="color && callbackFunction"
-  (click)="callbackFunction(color)"
-  [class]="color.backgroundColor"
-  class="w-7 h-7 shadow-sm rounded-full"
-></button>
+<div class="p-0.5 inline-flex border-2 border-slate-200 rounded-full shadow-sm">
+  <button
+    [disabled]="color.chosen"
+    *ngIf="color && callbackFunction"
+    (click)="chooseColor(color)"
+    [class]="color.backgroundColor"
+    class="w-7 h-7 rounded-full disabled:bg-gray-100"
+  ></button>
+</div>

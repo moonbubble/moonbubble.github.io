@@ -15,4 +15,12 @@ export class ColorChipComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  chooseColor(color: Color) {
+    color.chosen = true;
+
+    if (this.callbackFunction) {
+      this.callbackFunction(color);
+    }
+  }
 }

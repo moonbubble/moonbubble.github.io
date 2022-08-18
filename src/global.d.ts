@@ -5,5 +5,6 @@ declare global {
     name: string;
     index: number;
     backgroundColor: string;
+    chosen: boolean;
   }
 }

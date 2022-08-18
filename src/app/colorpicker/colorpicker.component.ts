@@ -6,8 +6,6 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./colorpicker.component.css'],
 })
 export class ColorpickerComponent {
-  colorCollect: Color[] = [];
-
   @Input()
   colors: Color[] = [];
 
@@ -17,7 +15,6 @@ export class ColorpickerComponent {
   @Output() newSquareColorEvent = new EventEmitter<Color>();
 
   addNewSquareColor = (color: Color): void => {
-    console.log('choosing...', color);
     this.newSquareColorEvent.emit(color);
   };
 }
