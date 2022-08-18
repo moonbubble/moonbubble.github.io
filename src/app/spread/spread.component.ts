@@ -18,7 +18,7 @@ export class SpreadComponent {
     {
       name: 'koraal',
       index: 1,
-      backgroundColor: 'bg-red-500',
+      backgroundColor: 'bg-rose-500',
       chosen: false,
     },
     {

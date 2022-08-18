@@ -1,7 +1,14 @@
-<div *ngIf="squareColors.length > 0" class="w-full my-4">
-  <ul>
-    <li class="text-center" *ngFor="let color of squareColors">
-      {{ color.name }}
-    </li>
-  </ul>
+<div
+  class="my-8 grid grid-cols-2 grid-rows-2 justify-items-center gap-4 h-36 w-36 m-auto"
+>
+  <ng-container *ngFor="let index of [0, 1, 2, 3]">
+    <div
+      [class]="
+        squareColors[index]
+          ? squareColors[index].backgroundColor
+          : 'bg-gray-100'
+      "
+      class="rounded-full w-16 h-16 shadow-sm"
+    ></div>
+  </ng-container>
 </div>
