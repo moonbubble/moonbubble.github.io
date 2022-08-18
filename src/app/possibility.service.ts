@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { colors } from './colors';
 
 @Injectable({
   providedIn: 'root',
@@ -6,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class PossibilityService {
   constructor() {}
 
-  convertColorsToPossibility(colors: Color[]): number {
+  convertColorsToNumber(colors: Color[]): number {
     const squareIndices = colors.map((color) => color.index);
 
     let sum = 0;
@@ -51,5 +52,15 @@ export class PossibilityService {
     }
 
     return sum;
+  }
+
+  convertNumberToColors() {
+    const colorList = [...colors];
+    const inputNumber = 241;
+    // rood geel koraal wit
+
+    // -----  FIRST COLOR
+
+    // -----  SECOND COLOR
   }
 }

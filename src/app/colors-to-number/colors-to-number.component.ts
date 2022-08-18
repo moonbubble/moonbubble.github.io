@@ -15,9 +15,8 @@ export class ColorsToNumberComponent {
 
   constructor(private possibilityService: PossibilityService) {}
 
-  setPossibility = (colors: Color[]): void => {
-    this.squareNumber =
-      this.possibilityService.convertColorsToPossibility(colors);
+  setNumber = (colors: Color[]): void => {
+    this.squareNumber = this.possibilityService.convertColorsToNumber(colors);
   };
 
   addSquareColor(color: Color) {
@@ -28,7 +27,7 @@ export class ColorsToNumberComponent {
     this.squareColors.push(color);
 
     if (this.squareColors.length === 4) {
-      this.setPossibility(this.squareColors);
+      this.setNumber(this.squareColors);
       this.colors = this.colors.map((color) => {
         return {
           ...color,
