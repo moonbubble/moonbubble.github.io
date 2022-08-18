@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { colors } from '../colors';
 
 @Component({
   selector: 'app-menu',
@@ -9,8 +10,7 @@ export class MenuComponent implements OnInit {
   @Input()
   changeMenu: (menu: Menu) => void = () => {};
 
-  @Input()
-  colors: Color[] = [];
+  colors: Color[] = colors;
 
   constructor() {}
 

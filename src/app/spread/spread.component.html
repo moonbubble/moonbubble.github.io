@@ -1,18 +1,13 @@
-<app-menu [changeMenu]="changeMenu" [colors]="colors"></app-menu>
+<app-menu [changeMenu]="changeMenu"></app-menu>
 
 <div
   *ngIf="menu === 1"
   class="h-screen xl:mx-96 xl:my-32 mx-20 pb-12 xl:shadow-lg xl:border-solid xl:border-2 xl:border-indigo-600"
 >
-  <app-color-picker
-    (newSquareColorEvent)="addSquareColor($event)"
-    [colors]="colors"
-  ></app-color-picker>
-  <app-square [squareColors]="squareColors"></app-square>
-  <app-square-number [squareNumber]="squareNumber"></app-square-number>
+  <app-colors-to-number></app-colors-to-number>
 </div>
 
-<div *ngIf="menu === 2">
+<div *ngIf="menu === 2" class="h-screen mx-20 pb-12">
   <p>cijfer naar kleuren</p>
 </div>
 
