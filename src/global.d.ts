@@ -7,4 +7,10 @@ declare global {
     backgroundColor: string;
     chosen: boolean;
   }
+
+  enum Menu {
+    Number = 1,
+    Colors = 2,
+    Possibilities = 3,
+  }
 }

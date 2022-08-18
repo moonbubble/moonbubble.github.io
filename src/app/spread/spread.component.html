@@ -1,31 +1,7 @@
-<div class="flex px-12 pt-8 pb-4 justify-between items-center">
-  <h1 class="font-vidaloka text-2xl">Spread</h1>
-  <div class="flex gap-3">
-    <button
-      class="h-7 w-7 shadow-md border border-slate-100 rounded-full flex justify-center items-center"
-    >
-      <div class="font-vidaloka text-sm">79</div>
-    </button>
-    <button class="h-7 w-7 shadow-md border border-slate-100 rounded-full">
-      <div
-        class="grid grid-rows-2 grid-cols-2 justify-items-center gap-0.5 h-2.5 w-2.5 m-auto"
-      >
-        <div
-          *ngFor="let i of [0, 4, 1, 6]"
-          [class]="colors[i].backgroundColor"
-          class="w-1 h-1 rounded-full"
-        ></div>
-      </div>
-    </button>
-    <button
-      class="h-7 w-7 shadow-md border border-slate-100 rounded-full flex justify-center items-center"
-    >
-      <div class="font-vidaloka text-sm">?</div>
-    </button>
-  </div>
-</div>
+<app-menu [changeMenu]="changeMenu" [colors]="colors"></app-menu>
 
 <div
+  *ngIf="menu === 1"
   class="h-screen xl:mx-96 xl:my-32 mx-20 pb-12 xl:shadow-lg xl:border-solid xl:border-2 xl:border-indigo-600"
 >
   <app-color-picker
@@ -34,4 +10,12 @@
   ></app-color-picker>
   <app-square [squareColors]="squareColors"></app-square>
   <app-square-number [squareNumber]="squareNumber"></app-square-number>
+</div>
+
+<div *ngIf="menu === 2">
+  <p>cijfer naar kleuren</p>
+</div>
+
+<div *ngIf="menu === 3">
+  <p>kleuren naar mogelijkheden</p>
 </div>

@@ -8,6 +8,7 @@ import { PossibilityService } from '../possibility.service';
 })
 export class SpreadComponent {
   squareNumber: number = 0;
+  menu: Menu = 1;
   colors: Color[] = [
     {
       name: 'geel',
@@ -61,6 +62,7 @@ export class SpreadComponent {
 
   // TODO: Maak dat je van getal naar kleur kunt
   // TODO: Schoon de calculatePossibility functie op
+  // TODO: Maak dat je kleuren kunt invullen en dan een lijst krijgt met de mogelijkheden waar die combinatie van kleuren in zit
 
   setPossibility = (colors: Color[]): void => {
     this.squareNumber =
@@ -84,4 +86,8 @@ export class SpreadComponent {
       });
     }
   }
+
+  changeMenu = (menu: Menu): void => {
+    this.menu = menu;
+  };
 }
