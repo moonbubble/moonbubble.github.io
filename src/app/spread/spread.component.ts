@@ -7,7 +7,7 @@ import { PossibilityService } from '../possibility.service';
   styleUrls: ['./spread.component.css'],
 })
 export class SpreadComponent {
-  menu: Menu = 2;
+  menu: Menu = 1;
 
   // TODO: Maak dat je van getal naar kleur kunt
   // TODO: Schoon de calculatePossibility functie op
