@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { PossibilityService } from '../possibility.service';
 
 @Component({
@@ -6,13 +6,15 @@ import { PossibilityService } from '../possibility.service';
   templateUrl: './number-to-colors.component.html',
   styleUrls: ['./number-to-colors.component.css'],
 })
-export class NumberToColorsComponent implements OnInit {
+export class NumberToColorsComponent {
   outputColors: string = '';
+  inputNumber: number | undefined = undefined;
 
   constructor(private possibilityService: PossibilityService) {}
 
-  ngOnInit(): void {
-    // geel licht blauw koraal
-    this.possibilityService.convertNumberToColors();
+  convertNumberToColors() {
+    if (this.inputNumber) {
+      this.possibilityService.convertNumberToColors(this.inputNumber);
+    }
   }
 }

@@ -11,6 +11,7 @@ import { ColorChipComponent } from './colorpicker/color-chip/color-chip.componen
 import { MenuComponent } from './menu/menu.component';
 import { ColorsToNumberComponent } from './colors-to-number/colors-to-number.component';
 import { NumberToColorsComponent } from './number-to-colors/number-to-colors.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,13 +23,10 @@ import { NumberToColorsComponent } from './number-to-colors/number-to-colors.com
     ColorChipComponent,
     MenuComponent,
     ColorsToNumberComponent,
-    NumberToColorsComponent
+    NumberToColorsComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { PossibilityService } from '../possibility.service';
 
 @Component({
   selector: 'app-spread',
