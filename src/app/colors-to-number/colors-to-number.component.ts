@@ -9,8 +9,7 @@ import { PossibilityService } from '../possibility.service';
 })
 export class ColorsToNumberComponent {
   squareNumber: number = 0;
-  colors: Color[] = colors;
-
+  colors: Color[] = [...colors];
   squareColors: Color[] = [];
 
   constructor(private possibilityService: PossibilityService) {}
@@ -19,7 +18,7 @@ export class ColorsToNumberComponent {
     this.squareNumber = this.possibilityService.convertColorsToNumber(colors);
   };
 
-  addSquareColor(color: Color) {
+  addSquareColor = (color: Color): void => {
     if (this.squareColors.length === 4) {
       this.squareColors = [];
     }
@@ -35,5 +34,5 @@ export class ColorsToNumberComponent {
         };
       });
     }
-  }
+  };
 }

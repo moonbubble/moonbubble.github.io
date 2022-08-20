@@ -12,9 +12,11 @@ export class ColorChipComponent implements OnInit {
   @Input()
   color: Color | null = null;
 
-  constructor() {}
-
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (this.color) {
+      this.color.chosen = false;
+    }
+  }
 
   chooseColor(color: Color) {
     color.chosen = true;

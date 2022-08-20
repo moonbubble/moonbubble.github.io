@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { colors } from './colors';
+import { colors as colorList } from './colors';
 
 @Injectable({
   providedIn: 'root',
@@ -55,7 +55,7 @@ export class PossibilityService {
   }
 
   convertNumberToColors() {
-    const colorList = [...colors];
+    const colors = [...colorList];
     const inputNumber = 241;
     // rood geel koraal wit
 

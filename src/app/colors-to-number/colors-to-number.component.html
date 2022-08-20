@@ -1,5 +1,5 @@
 <app-color-picker
-  (newSquareColorEvent)="addSquareColor($event)"
+  [chooseColor]="addSquareColor"
   [colors]="colors"
 ></app-color-picker>
 <app-square [squareColors]="squareColors"></app-square>

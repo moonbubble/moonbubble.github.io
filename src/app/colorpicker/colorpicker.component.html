@@ -1,7 +1,7 @@
 <div class="my-4">
   <div class="flex justify-center gap-5">
     <app-color-chip
-      [callbackFunction]="addNewSquareColor"
+      [callbackFunction]="chooseColor"
       [color]="color"
       *ngFor="let color of colors.slice(0, 2)"
     ></app-color-chip>
@@ -9,7 +9,7 @@
 
   <div class="flex justify-center gap-5 my-3">
     <app-color-chip
-      [callbackFunction]="addNewSquareColor"
+      [callbackFunction]="chooseColor"
       [color]="color"
       *ngFor="let color of colors.slice(2, 5)"
     ></app-color-chip>
@@ -17,7 +17,7 @@
 
   <div class="flex justify-center gap-5">
     <app-color-chip
-      [callbackFunction]="addNewSquareColor"
+      [callbackFunction]="chooseColor"
       [color]="color"
       *ngFor="let color of colors.slice(5, 7)"
     ></app-color-chip>

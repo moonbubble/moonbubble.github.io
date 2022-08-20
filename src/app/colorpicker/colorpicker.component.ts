@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-color-picker',
@@ -10,11 +10,5 @@ export class ColorpickerComponent {
   colors: Color[] = [];
 
   @Input()
-  callBackFunction: ((arr: Color[]) => void) | undefined = undefined;
-
-  @Output() newSquareColorEvent = new EventEmitter<Color>();
-
-  addNewSquareColor = (color: Color): void => {
-    this.newSquareColorEvent.emit(color);
-  };
+  chooseColor: ((color: Color) => void) | undefined = undefined;
 }

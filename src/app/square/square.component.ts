@@ -8,6 +8,4 @@ import { Component, Input } from '@angular/core';
 export class SquareComponent {
   @Input()
   squareColors: Color[] = [];
-
-  ngOnInit(): void {}
 }

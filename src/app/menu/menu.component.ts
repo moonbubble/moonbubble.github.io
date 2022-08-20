@@ -10,7 +10,7 @@ export class MenuComponent implements OnInit {
   @Input()
   changeMenu: (menu: Menu) => void = () => {};
 
-  colors: Color[] = colors;
+  colors: Color[] = [...colors];
 
   constructor() {}
 
