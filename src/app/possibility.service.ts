@@ -55,12 +55,109 @@ export class PossibilityService {
   }
 
   convertNumberToColors() {
-    const colors = [...colorList];
+    let colors = [...colorList];
     const inputNumber = 241;
     // rood geel koraal wit
 
     // -----  FIRST COLOR
+    let firstColor: Color;
+    let secondColor: Color;
+    let thirdColor: Color;
+    let fourthColor: Color;
+
+    if (this.checkBetweenNumbers(inputNumber, 1, 120)) {
+      firstColor = colors[0];
+    }
+    if (this.checkBetweenNumbers(inputNumber, 121, 240)) {
+      firstColor = colors[1];
+    }
+    if (this.checkBetweenNumbers(inputNumber, 241, 360)) {
+      firstColor = colors[2];
+      colors.splice(2, 1);
+      console.log('firstColor', firstColor);
+      console.log('colors', colors);
+
+      if (this.checkBetweenNumbers(inputNumber, 241, 260)) {
+        secondColor = colors[0];
+        colors.splice(0, 1);
+        console.log('secondColor', secondColor);
+        console.log('colors', colors);
+
+        if (this.checkBetweenNumbers(inputNumber, 241, 244)) {
+          thirdColor = colors[0];
+          colors.splice(0, 1);
+          console.log('thirdColor', thirdColor);
+          console.log('colors', colors);
+
+          if (this.checkBetweenNumbers(inputNumber, 241, 241)) {
+            fourthColor = colors[0];
+          }
+          if (this.checkBetweenNumbers(inputNumber, 242, 242)) {
+            fourthColor = colors[1];
+          }
+          if (this.checkBetweenNumbers(inputNumber, 243, 243)) {
+            fourthColor = colors[2];
+          }
+          if (this.checkBetweenNumbers(inputNumber, 244, 244)) {
+            fourthColor = colors[3];
+            console.log('fourtColor', fourthColor);
+            console.log('çolors', colors);
+          }
+        }
+        if (this.checkBetweenNumbers(inputNumber, 245, 248)) {
+          thirdColor = colors[1];
+        }
+        if (this.checkBetweenNumbers(inputNumber, 249, 252)) {
+          thirdColor = colors[2];
+        }
+        if (this.checkBetweenNumbers(inputNumber, 253, 256)) {
+          thirdColor = colors[3];
+        }
+        if (this.checkBetweenNumbers(inputNumber, 257, 260)) {
+          thirdColor = colors[4];
+        }
+      }
+      if (this.checkBetweenNumbers(inputNumber, 261, 280)) {
+        secondColor = colors[1];
+      }
+      if (this.checkBetweenNumbers(inputNumber, 281, 300)) {
+        secondColor = colors[2];
+      }
+      if (this.checkBetweenNumbers(inputNumber, 301, 320)) {
+        secondColor = colors[3];
+      }
+      if (this.checkBetweenNumbers(inputNumber, 321, 340)) {
+        secondColor = colors[4];
+      }
+      if (this.checkBetweenNumbers(inputNumber, 341, 360)) {
+        secondColor = colors[5];
+      }
+    }
+    if (this.checkBetweenNumbers(inputNumber, 361, 480)) {
+      firstColor = colors[3];
+    }
+    if (this.checkBetweenNumbers(inputNumber, 481, 600)) {
+      firstColor = colors[4];
+    }
+    if (this.checkBetweenNumbers(inputNumber, 601, 720)) {
+      firstColor = colors[5];
+    }
+    if (this.checkBetweenNumbers(inputNumber, 721, 840)) {
+      firstColor = colors[6];
+    }
 
     // -----  SECOND COLOR
+  }
+
+  checkBetweenNumbers(
+    numberToCheck: number,
+    startNumber: number,
+    endNumber: number
+  ): boolean {
+    if (numberToCheck >= startNumber && numberToCheck <= endNumber) {
+      return true;
+    }
+
+    return false;
   }
 }
