@@ -1,4 +1,4 @@
-<div class="flex justify-center">
+<div class="flex flex-col items-center gap-4">
   <input
     type="text"
     [(ngModel)]="inputNumber"
@@ -6,10 +6,18 @@
     max="840"
     class="border-black border-b h-8 text-center w-24 font-vidaloka"
   />
+
+  <button
+    class="shadow-md border border-slate-100 rounded-full py-1 px-3 disabled:opacity-50 font-vidaloka"
+    (click)="convertNumberToColors()"
+    [disabled]="!isInputNumberValid()"
+  >
+    Convert
+  </button>
 </div>
 
-<div>
-  <button (click)="convertNumberToColors()">Convert</button>
-  <p>input: {{ inputNumber }}</p>
-  <p>output: {{ outputColors }}</p>
-</div>
+<app-square [squareColors]="squareColors"></app-square>
+<app-square-number
+  *ngIf="covertedNumber"
+  [squareNumber]="covertedNumber"
+></app-square-number>

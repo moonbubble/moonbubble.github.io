@@ -7,14 +7,32 @@ import { PossibilityService } from '../possibility.service';
   styleUrls: ['./number-to-colors.component.css'],
 })
 export class NumberToColorsComponent {
-  outputColors: string = '';
   inputNumber: number | undefined = undefined;
+  squareColors: Color[] = [];
+  covertedNumber: number | undefined = undefined;
 
   constructor(private possibilityService: PossibilityService) {}
 
-  convertNumberToColors() {
+  isInputNumberValid(): boolean {
     if (this.inputNumber) {
-      this.possibilityService.convertNumberToColors(this.inputNumber);
+      if (this.inputNumber > 0 && this.inputNumber <= 840) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+  convertNumberToColors() {
+    if (this.inputNumber && this.isInputNumberValid()) {
+      this.squareColors = this.possibilityService.convertNumberToColors(
+        this.inputNumber
+      );
+
+      this.covertedNumber = this.inputNumber;
+    }
+
+    if (!this.isInputNumberValid()) {
     }
   }
 }

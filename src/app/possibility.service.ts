@@ -54,7 +54,7 @@ export class PossibilityService {
     return sum;
   }
 
-  convertNumberToColors(inputNumber: number): Color[] | null {
+  convertNumberToColors(inputNumber: number): Color[] {
     let colors = [...colorList];
     let convertedSquare: Color[] = [];
 
@@ -134,7 +134,7 @@ export class PossibilityService {
       return convertedSquare;
     }
 
-    return null;
+    return [];
   }
 
   checkBetweenNumbers(
