@@ -2,5 +2,14 @@
   [chooseColor]="addSquareColor"
   [colors]="colors"
 ></app-color-picker>
+<div class="flex justify-center">
+  <button
+    class="shadow-md border border-slate-100 rounded-full py-1 px-3 disabled:opacity-50 font-vidaloka"
+    (click)="turnSquareLeft()"
+    [disabled]="!isTurningPossible()"
+  >
+    turn square
+  </button>
+</div>
 <app-square [squareColors]="squareColors"></app-square>
 <app-square-number [squareNumber]="squareNumber"></app-square-number>

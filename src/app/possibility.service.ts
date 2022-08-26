@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { colors as colorList } from './colors';
+import { colors as colorList, colors } from './colors';
 
 @Injectable({
   providedIn: 'root',
@@ -7,6 +7,7 @@ import { colors as colorList } from './colors';
 export class PossibilityService {
   constructor() {}
 
+  // TODO: Opschonen
   convertColorsToNumber(colors: Color[]): number {
     const squareIndices = colors.map((color) => color.index);
 
@@ -54,6 +55,7 @@ export class PossibilityService {
     return sum;
   }
 
+  // TODO: Opschonen
   convertNumberToColors(inputNumber: number): Color[] {
     let colors = [...colorList];
     let convertedSquare: Color[] = [];
@@ -147,5 +149,85 @@ export class PossibilityService {
     }
 
     return false;
+  }
+
+  calculatePossibilities() {
+    let input = [[...colors][2]];
+
+    input.forEach((element) => {
+      this.calculatePossibilitiesPerColor(element);
+    });
+
+    console.log('input', input);
+  }
+
+  calculatePossibilitiesPerColor(color: Color) {
+    for (let position = 1; position <= 4; position++) {
+      if (position === 1) {
+        console.log('position is 1');
+
+        // 1 - 120
+        const start = 1 + 120 * color.index;
+        const end = 120 + 120 * color.index;
+        const range = [...Array(end - start + 1).keys()].map((x) => x + start);
+        console.log('range', range);
+      }
+
+      if (position === 2) {
+        console.log('position is 2');
+        let secondrange: number[] = [];
+
+        // if i is kleiner, dan is hij altijd 2e, rood
+        // if i = gelijk, dan is hij niet
+        // if i is groter, dan is hij altijd 3e, rood
+        for (let i = 0; i < 7; i++) {
+          if (i < color.index) {
+            // 21-40
+            // 141-160
+            const secondstart = 1 + 20 * (color.index - 1) + 120 * i;
+            const secondend = 20 + 20 * (color.index - 1) + 120 * i;
+            let range = [...Array(secondend - secondstart + 1).keys()].map(
+              (x) => x + secondstart
+            );
+            secondrange.push(...range);
+          }
+
+          if (i > color.index) {
+            // 401-420
+            // 521-540
+            // 641-660
+            // 761-780
+            const secondstart = 1 + 20 * color.index + 120 * i; // 360 + 40 + 1 = 401
+            const secondend = 20 + 20 * color.index + 120 * i; // 360 + 40 + 20 = 420
+            let range = [...Array(secondend - secondstart + 1).keys()].map(
+              (x) => x + secondstart
+            );
+            secondrange.push(...range);
+          }
+        }
+
+        console.log('range 2', secondrange);
+      }
+
+      // if (position === 3) {
+      //   console.log('position is 3');
+      //   let thirdrange: number[] = [];
+
+      //   for (let i = 0; i < 7; i++) {
+      //     for (let j = 0; j < 6; j++) {
+      //       if (i > color.index && j < color.index) {
+      //         const start = 1 + 4 * (color.index - 1) + 20 * j + 120 * i;
+      //         const end = 4 + 4 * (color.index - 1) + 20 * j + 120 * i;
+      //         let range = [...Array(end - start + 1).keys()].map(
+      //           (x) => x + start
+      //         );
+      //         thirdrange.push(...range);
+      //       }
+      //     }
+      //   }
+
+      //   console.log('range 3', thirdrange);
+      // }
+    }
   }
 }

@@ -35,4 +35,23 @@ export class ColorsToNumberComponent {
       });
     }
   };
+
+  turnSquareLeft(): void {
+    let squareToBeTurned = [...this.squareColors];
+
+    const firstColor = squareToBeTurned.shift();
+    if (firstColor) {
+      squareToBeTurned.push(firstColor);
+    }
+
+    this.squareColors = [...squareToBeTurned];
+
+    if (this.squareColors.length === 4) {
+      this.setNumber(this.squareColors);
+    }
+  }
+
+  isTurningPossible(): boolean {
+    return this.squareColors.length === 4;
+  }
 }

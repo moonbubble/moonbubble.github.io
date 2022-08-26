@@ -12,6 +12,7 @@ import { MenuComponent } from './menu/menu.component';
 import { ColorsToNumberComponent } from './colors-to-number/colors-to-number.component';
 import { NumberToColorsComponent } from './number-to-colors/number-to-colors.component';
 import { FormsModule } from '@angular/forms';
+import { PossibilitiesComponent } from './possibilities/possibilities.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { FormsModule } from '@angular/forms';
     MenuComponent,
     ColorsToNumberComponent,
     NumberToColorsComponent,
+    PossibilitiesComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
